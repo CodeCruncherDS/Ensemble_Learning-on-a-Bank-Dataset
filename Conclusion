@@ -1,0 +1,21 @@
+# Conclusion:
+## Comments on dataset:
+* The models perform well in predicting the class 0 i.e. customer not subscribing to term deposit which can be seen in the confusion matrix of all models. 
+* The models do not perform well in predicting the class 1 i.e. customer subscribing to term deposit which can be seen in the confusion matrix of all models. 
+* Above situation occured because the Dataset is imbalanced. i.e. The ratio difference between class 0 and class 1 is huge. Which trained models to effectively identify class 0 but did not train suffuiciently to classify class 1.
+* This situation could have been avoided if the datset was balanced. 
+* Along with imbalance, the dataset contained large number of unknown string values in 'job','education','contact' and 'poutcome' columns.
+
+## Comments on  Models:
+* When benchmarking with 'duration' column, Support Vector Classifier achieved 90% model accuracy while naive bayes score was 85% accurate.
+* SVC Perfomed better because of it's capabality of creating multiple hpyerplanes and then classifying the data.
+* After removing the 'duration' column, The highest model score dropped by 0.5%.
+* The Outliers did not affect much on accuracy scores of all models. As can be seen in above accuracy scores, getting rid of outliers by mean/median replacement did not affect the scores.
+* In Decision Trees, Gradient boosting method always performed better for this dataset.
+* While visualizing Decision Tree, The Pruned decision tree was easy to visualize as it had lesser leaf nodes than Tree which was not pruned.
+
+## Miscellaneous Comments:
+* After trying get_dummies the score did not show significant difference as well as I have skipped the get_dummies step because the dataset was creating more dimension, which was making the project more computationally intensive.
+* If I had kept get_dummies step, then in production stage if the new dataset turned out to be huge in number of rows then this project would have taken a lot of time to execute.
+* Outlier handeling did not make any significant difference in the accuracy scores of models.
+* I have tried to keep minimum time complexity of this project.
